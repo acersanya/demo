@@ -1,6 +1,6 @@
 # Demo Cinema Service
 
-<b>Avaible Endpoints</b><br/>
+<b>Avaible REST endpoints</b><br/>
 
 - /v0/api/cinemas <b>fetch all cinemas</b>
 - /v0/api/cinemas/withnplusone <b>fetch movies with N+1 problem</b>
