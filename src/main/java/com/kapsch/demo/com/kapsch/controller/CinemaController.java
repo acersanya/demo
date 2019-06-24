@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,10 +24,23 @@ public class CinemaController {
 
     private final ReservationService reservationService;
 
-//    @GetMapping("/cinemas")
-//    public List<Cinema> getAllCinemas() {
-//        return cinemaRepository.findAll();
-//    }
+    @GetMapping("/cinemas")
+    public List<String> getAllCinemas() {
+        return reservationService
+            .getAllCinemas()
+            .stream()
+            .map(Cinema::getName)
+            .collect(Collectors.toList());
+    }
+
+    @GetMapping("/cinemas/withnplusone")
+    public List<String> showNPlusOneProblem() {
+        return reservationService.getCinema(8L)
+            .getMovies()
+            .stream()
+            .map(Movie::getName)
+            .collect(Collectors.toList());
+    }
 
     @GetMapping("/cinemas/withjoinfetch")
     public List<String> showJoinFetch() {

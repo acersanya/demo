@@ -25,7 +25,6 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
 @Entity
 @EqualsAndHashCode(of = "name")
 @Getter

@@ -44,4 +44,9 @@ public class ReservationReservationServiceImpl implements ReservationService {
     public Set<String> getCinemaBySessionAmountFilterByStartDateAndEndDate(LocalDateTime dateFrom, LocalDateTime dateTo) {
         return cinemaRepository.getCinemaNamesWithMoreThanFiveSessions(dateFrom, dateTo);
     }
+
+    @Override
+    public List<Cinema> getAllCinemas() {
+        return cinemaRepository.findAll();
+    }
 }

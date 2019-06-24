@@ -17,8 +17,9 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@EqualsAndHashCode(of = "id")
+@Getter
+@Setter
 @Entity
 @Table(name = "ticket")
 public class Ticket {

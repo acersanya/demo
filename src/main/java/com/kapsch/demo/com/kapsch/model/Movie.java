@@ -26,7 +26,6 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(of = "name")
-//@Builder
 @Entity
 @Table(name = "movie")
 public class Movie {
@@ -51,6 +50,4 @@ public class Movie {
         orphanRemoval = true
     )
     private Set<Session> sessions = new HashSet<>();
-
-
 }
