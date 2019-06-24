@@ -1,5 +1,6 @@
 package com.kapsch.demo.com.kapsch.service;
 
+import com.kapsch.demo.com.kapsch.dto.AggregationDTO;
 import com.kapsch.demo.com.kapsch.model.Cinema;
 import com.kapsch.demo.com.kapsch.repository.CinemaRepository;
 import java.time.LocalDateTime;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ReservationReservationServiceImpl implements ReservationService {
+public class CinemaServiceImpl implements CinemaService {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -48,5 +49,10 @@ public class ReservationReservationServiceImpl implements ReservationService {
     @Override
     public List<Cinema> getAllCinemas() {
         return cinemaRepository.findAll();
+    }
+
+    @Override
+    public AggregationDTO getTotalPricePerMovieFilterByDate(LocalDateTime dateFrom, LocalDateTime dateTo, Long movieId, Long cinemaId) {
+        return cinemaRepository.getCinemaTotalMoney(dateFrom, dateTo, movieId, cinemaId);
     }
 }
