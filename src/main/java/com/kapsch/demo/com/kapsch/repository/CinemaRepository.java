@@ -1,7 +1,6 @@
 package com.kapsch.demo.com.kapsch.repository;
 
 import com.kapsch.demo.com.kapsch.model.Cinema;
-import com.kapsch.demo.com.kapsch.model.Movie;
 import java.time.LocalDateTime;
 import java.util.Set;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,8 +11,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
-    @Query("select c.movies from Cinema c where c.id = :id ")
-    public Set<Movie> getById(@Param("id") Long id);
+    @Query(value = "select c from Cinema c "
+        + " join fetch c.movies m "
+        + " where c.id = :id ")
+    public Cinema getByIdFetchMovies(@Param("id") Long id);
 
     @Query(value = " SELECT h.name "
         + "FROM "

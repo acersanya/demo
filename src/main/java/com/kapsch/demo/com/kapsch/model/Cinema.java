@@ -1,7 +1,7 @@
 package com.kapsch.demo.com.kapsch.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
+import javax.persistence.NamedEntityGraphs;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -29,7 +32,11 @@ import lombok.ToString;
 @Setter
 @ToString(of = "name")
 @Table(name = "cinema")
+@NamedEntityGraphs({
+    @NamedEntityGraph(name = Cinema.MOVIES, attributeNodes = @NamedAttributeNode("movies"))
+})
 public class Cinema {
+    public static final String MOVIES = "Cinema[movies]";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +55,5 @@ public class Cinema {
         joinColumns = {@JoinColumn(name = "cinema_id")},
         inverseJoinColumns = {@JoinColumn(name = "movie_id")}
     )
-    private Set<Movie> movies = new HashSet<>();
-
+    private List<Movie> movies = new ArrayList<>();
 }

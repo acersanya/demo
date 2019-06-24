@@ -5,7 +5,9 @@ import java.util.Set;
 
 public interface ReservationService {
 
-    Set<String> getMoviesByCinemaId(Long id);
+    Cinema getCinema(Long id);
+
+    Cinema getCinemaJoinFetch(Long id);
 
     Set<String> getAllMoviesByCinemaFilterByStartDateAndEndDate(LocalDateTime dateFrom, LocalDateTime dateTo);
 
