@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7</OriginalElement>
+  <nodes>
+    <node x="39.75" y="0.0">646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie</node>
+    <node x="0.0" y="147.0">646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.session</node>
+    <node x="236.75" y="0.0">646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.cinema</node>
+    <node x="195.0" y="169.5">646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie_cinema</node>
+    <node x="0.0" y="316.0">646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.ticket</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.session" target="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie">
+      <point x="0.0" y="-59.5" />
+      <point x="-44.25" y="48.5" />
+    </edge>
+    <edge source="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie_cinema" target="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.cinema">
+      <point x="41.75" y="-37.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie_cinema" target="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.movie">
+      <point x="-41.75" y="-37.0" />
+      <point x="236.75" y="122.0" />
+      <point x="172.5" y="122.0" />
+      <point x="44.25" y="48.5" />
+    </edge>
+    <edge source="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.ticket" target="646dfbc7-e7bb-4d15-8e8f-f76fca36e7f7.TABLE:cikulm-cinema.public.session">
+      <point x="0.0" y="-59.5" />
+      <point x="0.0" y="59.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="202.0" y="217.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
