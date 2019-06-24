@@ -6,7 +6,7 @@
 - /v0/api/cinemas/withnplusone <b>fetch movies with N+1 problem</b>
 - /v0/api/cinemas/withjoinfetch <b>fetch movies with join fetch</b>
 - /v0/api/cinemas/withentitygraph <b>fetch movies with EntityGraph</b>
-- /v0/api/cinemas/session?fromDate=&toDate=
+- /v0/api/cinemas/session?<b>fromDate</b>=&<b>toDate</b>=
 
 
 # Database model
