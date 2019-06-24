@@ -1,2 +1,2 @@
 # demo
-draft demo
+demo service
