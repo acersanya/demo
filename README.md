@@ -1,12 +1,14 @@
 # Demo Cinema Service
 
 <b>Avaible REST endpoints</b><br/>
-
-- /v0/api/cinemas <b>fetch all cinemas</b>
-- /v0/api/cinemas/withnplusone <b>fetch movies with N+1 problem</b>
-- /v0/api/cinemas/withjoinfetch <b>fetch movies with join fetch</b>
-- /v0/api/cinemas/withentitygraph <b>fetch movies with EntityGraph</b>
+# Movie API
+- /v0/api/cinemas <b>Get all avaible cinemas</b>
+- /v0/api/cinemas/withnplusone <b>Fetch movies with N+1 problem</b>
+- /v0/api/cinemas/withjoinfetch <b>Fetch movies with join fetch</b>
+- /v0/api/cinemas/withentitygraph <b>Fetch movies with EntityGraph</b>
 - /v0/api/cinemas/session?<b>fromDate</b>=?&<b>toDate</b>=?
+# Cinema API
+- /v0/api/movies/{movieId} <b>Get movie by id</b>
 
 
 # Database model
