@@ -23,9 +23,9 @@ public class MovieController {
     private final MovieRepository movieRepository;
 
     @GetMapping("/{movieId}")
-    public ResponseEntity<Movie> getCinemasBySessionFilterDate(
+    public ResponseEntity<String> getCinemasBySessionFilterDate(
         @PathVariable(value = "movieId") Long movieId) {
-        return ResponseEntity.of(movieRepository.findById(movieId));
+        return ResponseEntity.of(movieRepository.findById(movieId).map(Movie::getName));
     }
 
     @PostMapping(consumes = "application/json")
